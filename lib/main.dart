@@ -16,9 +16,14 @@ class MyApp extends StatelessWidget {
         body: Container(
           height: 180,
           width: double.infinity,
-          color: Colors.green,
+          //color: Colors.green,
+          alignment: Alignment.center,
           margin: const EdgeInsets.all(18),
-          child: const Text("Hola! This text is inside a container.",
+          padding: const EdgeInsets.all(32),
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.black, width: 4),
+          ),
+          child: const Text(" Hola! This text is inside a container.",
               style: TextStyle(fontSize: 18)),
         ),
       ),
