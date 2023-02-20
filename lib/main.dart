@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
           height: 180,
           width: double.infinity,
           color: Colors.green,
+          margin: const EdgeInsets.all(18),
           child: const Text("Hola! This text is inside a container.",
               style: TextStyle(fontSize: 18)),
         ),
