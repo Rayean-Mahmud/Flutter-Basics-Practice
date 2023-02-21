@@ -10,32 +10,77 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      //theme: ThemeData(primarySwatch: Colors.red),
+      //darkTheme: ThemeData(primarySwatch: Colors.grey),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('My App'),
         ),
         drawer: Drawer(
           child: ListView(
-            children: const <Widget>[
-              DrawerHeader(
+            padding: const EdgeInsets.all(0),
+            children: <Widget>[
+              const DrawerHeader(
                 decoration: BoxDecoration(
                   color: Colors.blue,
                 ),
-                child: Text(
-                  'Sample Text',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 56, 10, 10),
-                    fontSize: 22,
+                child: UserAccountsDrawerHeader(
+                  accountName: Text(
+                    "Rayean Mahmud",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  accountEmail: Text("rayean.mahmud.arnob@gmail.com"),
+                  currentAccountPictureSize: Size.square(45),
+                  currentAccountPicture: CircleAvatar(
+                    backgroundColor: Color.fromARGB(255, 110, 139, 178),
+                    child: Text(
+                      "R",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 56, 10, 10),
+                        fontSize: 22,
+                      ),
+                    ),
                   ),
                 ),
               ),
               ListTile(
-                title: Text('Item 1'),
-                leading: Icon(Icons.people),
+                title: const Text('My Profile'),
+                leading: const Icon(Icons.person),
+                onTap: () {
+                  Navigator.pop(context);
+                },
               ),
               ListTile(
-                title: Text('Item 2'),
-                leading: Icon(Icons.mail),
+                title: const Text('Edit profile'),
+                leading: const Icon(Icons.edit),
+                onTap: () {},
+              ),
+              ListTile(
+                title: const Text('My course'),
+                leading: const Icon(Icons.book),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.workspace_premium),
+                title: const Text("Premium"),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                  leading: const Icon(Icons.video_label),
+                  title: const Text('Saved Videos'),
+                  onTap: () {
+                    Navigator.pop(context);
+                  }),
+              ListTile(
+                title: const Text('Logout'),
+                leading: const Icon(Icons.logout),
+                onTap: () {
+                  Navigator.pop(context);
+                },
               ),
             ],
           ),
